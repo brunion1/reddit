@@ -25,7 +25,7 @@
       </ion-refresher>
         <div class="list">
           <a class="item item-thumbnail-left" 
-            ng-href="{{story.url}}"
+            ng-click="openLink(story.url)"
             ng-repeat="story in stories track by story.id">
             <img ng-src="{{story.thumbnail}}">
             <h2 style="white-space:normal; height:3.3em;">{{story.title}}</h2>

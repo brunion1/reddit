@@ -16,6 +16,9 @@
       })
     }
     
+    $scope.openLink = function(url){
+      window.open(url, '_blank');
+    };
     
     $scope.loadOlderStories = function(){
       var params = {};
@@ -42,6 +45,9 @@
     $ionicPlatform.ready(function() {
       if(window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if(window.cordova && window.cordova.InAppBrowser){
+        window.open = window.cordova.InAppBrowser.open;
       }
       if(window.StatusBar) {
         StatusBar.styleDefault();
